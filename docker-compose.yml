@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  jenkins:
+    image: linkerx/jenkins
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+     - ./data:/var/jenkins_home
+     - /usr/bin/docker:/usr/bin/docker
+    ports:
+     - 8080:8080
+     - 50000:50000
